@@ -3,35 +3,114 @@
 
 ## Introduzione
 
-In questo esercizio chiamerai prima alcune funzioni predefinite e poi creerai le tue funzioni che dovranno fare `return` di un valore in base ai requisiti della funzione e ai parametri forniti.
+In questo esercizio ti eserciterai con i fondamenti di JavaScript. Dovrai:
+1. **Chiamare funzioni** già esistenti passando i parametri corretti
+2. **Creare nuove funzioni** che restituiscono un valore (usando `return`) in base ai requisiti specificati
 
-## Setup
+Questo è un esercizio pratico per imparare a scrivere codice JavaScript funzionante!
 
-- Fai il fork di questo repository e clona la tua versione sulla tua macchina
-- Installa le dipendenze eseguendo il comando qui sotto nella directory principale del progetto:
+## Setup (Preparazione dell'ambiente)
 
-  `npm ci`
+1. **Fai il fork** di questo repository e clona la tua versione sulla tua macchina
+2. **Apri il progetto** nel tuo editor di codice (es. VS Code)
+3. **Installa le dipendenze** eseguendo questo comando nel terminale dalla directory principale del progetto:
+   ```bash
+   npm ci
+   ```
+   Questo comando scarica tutti gli strumenti necessari per verificare il tuo codice.
 
-## Istruzioni
+## Come lavorare: Istruzioni passo-passo
 
-- Leggi i commenti numerati - es. `1. Definisci una funzione...` - nei seguenti all'interno della cartella `src`.
+### 1. Parti dall'esempio
+- Apri il file `src/00-example.js` per vedere alcuni esempi di funzioni già complete
+- Questo ti darà un'idea di come dovrebbe essere strutturato il tuo codice
 
-- Scrivi il tuo codice subito sotto il commento numerato.
+### 2. Scegli un file su cui lavorare
+I file nella cartella `src/` sono ordinati per difficoltà:
+- `01-for-loop-basic.js` - Cicli for di base
+- `02-for-loop-and-arrays.js` - Cicli for con array
+- `03-objects.js` - Lavorare con gli oggetti
+- `04-calling-functions.js` - Chiamare funzioni esistenti
+- `05-creating-functions.js` - Creare nuove funzioni
+- `06-array-methods.js` - Metodi degli array
 
-- Aggiungi dei `console.log()` per verificare la tua soluzione ed esegui il file con il comando `node src/calling-functions.js` *ecc.*
+### 3. Leggi i commenti e scrivi il codice
+- Ogni file contiene **commenti numerati** (es. `// 1. Define a function that takes a number...`)
+- Questi commenti ti dicono **cosa devi fare**
+- **Scrivi il tuo codice subito sotto** il commento corrispondente
 
-- Consulta `src/00-example.js` per alcune funzioni di esempio
+### 4. Prova il tuo codice manualmente
+Prima di eseguire i test, puoi verificare che il tuo codice funzioni:
+- Aggiungi dei `console.log()` per stampare i risultati
+- Esegui il file con Node.js, ad esempio:
+  ```bash
+  node src/01-for-loop-basic.js
+  ```
 
-## Esecuzione dei test
+## Cosa sono gli Unit Test? (e come usarli qui)
 
-- Per verificare le tue soluzioni, esegui la suite di test con il comando `npx jest` seguito dal percorso del file di test corrispondente per ogni file `src/.js`, ad esempio: `npx jest spec/calling-functions.spec.js`
+### Breve spiegazione
+Gli **unit test** sono piccoli programmi automatici che verificano se il tuo codice funziona correttamente. Invece di testare manualmente ogni funzione, i test lo fanno per te in modo automatico e veloce.
 
-- In alternativa, puoi eseguire: `npm test` per lanciare tutti i test
+**Pensa ai test come a un correttore automatico:**
+- Tu scrivi le funzioni nei file `src/`
+- I test (nella cartella `spec/`) controllano se le tue funzioni funzionano correttamente
+- Ti danno un feedback immediato: ✅ PASS (corretto) o ❌ FAIL (da correggere)
 
+**Non dovrai scrivere i test** - sono già pronti! Il tuo compito è scrivere il codice che li fa passare.
 
-- All'inizio, quasi tutti i test falliranno: solo i test di esempio passeranno con una label `PASS` in verde. Vedrai molti `FAIL` rossi nel terminale, come nell'immagine qui sotto:
+### Vuoi approfondire? 📚
+Se sei curioso e vuoi saperne di più sugli unit test e Jest:
+- **[Jest - Getting Started](https://jestjs.io/docs/getting-started)**
+- **[Introduzione a Jest su dev.to](https://dev.to/kiraaziz/introduction-to-jest-bnf)**
 
-  ![](./img/test-report.png)
+### Come verificare le tue soluzioni con i test
 
-- La tua soluzione è completa quando tutte i test segnano `PASS` in verde nel terminale, come mostrato qui sotto
+#### Testare un singolo file
+Per verificare le soluzioni di un file specifico, esegui:
+```bash
+npx jest spec/01-for-loop-basic.spec.js
+```
+Sostituisci il nome del file con quello corrispondente al file `src/` su cui stai lavorando.
+
+#### Testare tutto insieme
+Per eseguire tutti i test in una volta:
+```bash
+npm test
+```
+
+### Come interpretare i risultati
+
+**All'inizio (prima di scrivere codice):**
+- Vedrai molti ❌ `FAIL` rossi → è normale! Significa che il codice non è ancora completo
+- Solo i test di esempio 00 saranno verdi ✅ `PASS`
+
+Esempio di output iniziale:
+
+![](./img/test-report.png)
+
+**Durante il lavoro:**
+- Ogni volta che completi una funzione correttamente, il test corrispondente diventerà ✅ `PASS`
+- Se un test fallisce, leggi il messaggio di errore: ti dice **cosa non funziona** e **cosa si aspettava**
+
+**Quando hai finito:**
+- Tutti i test dovranno essere verdi ✅ `PASS`
+- Questo significa che tutte le tue funzioni funzionano correttamente!
+
+## Consigli pratici
+
+1. **Lavora un file alla volta** - non cercare di fare tutto insieme
+2. **Leggi attentamente i commenti** - ti dicono esattamente cosa fare
+3. **Testa spesso** - esegui i test dopo ogni funzione che scrivi
+4. **Leggi i messaggi di errore** - contengono informazioni preziose su cosa correggere
+5. **Usa console.log()** per capire cosa sta succedendo nel tuo codice
+6. **Consulta l'esempio** (`00-example.js`) se sei bloccato
+
+## Risoluzione problemi
+
+- **I test non partono?** Assicurati di aver eseguito `npm ci` per installare le dipendenze
+- **Non capisci un errore?** Leggi con calma il messaggio: di solito dice cosa si aspettava e cosa ha ricevuto
+- **Il codice funziona con console.log ma il test fallisce?** Controlla che la tua funzione faccia `return` del valore (non solo `console.log`)
+
+Buon lavoro! 🚀
 

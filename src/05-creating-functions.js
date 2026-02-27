@@ -22,6 +22,16 @@ function incrementByOne(a) {
 
 // TODO: write code below
 
+function capitalisesString(word) {
+  if (typeof word !== "string" || word.length === 0) return word;
+  let chars = word.split("");
+  let currentChar = chars[0].toUpperCase();
+  for (let i = 1; i < chars.length; i++) {
+    currentChar += chars[i];
+  }
+  return currentChar;
+}
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -32,6 +42,11 @@ function incrementByOne(a) {
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function greetWithSmile(name) {
+  const capitalised = capitalisesString(name);
+  const helloSmiley = `Hi, ${capitalised} :)`;
+  return helloSmiley;
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -45,6 +60,17 @@ function incrementByOne(a) {
 //
 // TODO: write code below
 
+function countStrings(array) {
+  let count = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === "string") {
+      count++;
+    }
+  }
+  return count;
+}
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -56,11 +82,18 @@ function incrementByOne(a) {
 //
 // TODO: write code below
 
+function addEdwardAmazing(object) {
+  if (!object.edward) {
+    object.edward = "amazing";
+  }
+  return object;
+}
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
-}
+  a: incrementByOne,
+  b: capitalisesString,
+  c: greetWithSmile,
+  d: countStrings,
+  e: addEdwardAmazing,
+};
